@@ -1,0 +1,176 @@
+/* Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #e5e5e5;
+}
+
+/* Logo */
+.site-logo {
+    position: fixed;
+    top: 16px;
+    left: 20px;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 100;
+    background-color: #ffd000;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 16px;
+    right: 20px;
+    background: #ffd000;
+    border: none;
+    border-radius: 50%;
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+body.dark-mode .theme-toggle {
+    background: #ffd000;
+}
+
+/* Card Container — acts as viewport window */
+.card-container {
+    width: 440px;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.18);
+}
+
+/* Slider — holds both panels side by side */
+.card-slider {
+    display: flex;
+    width: 200%;
+    transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* Each card takes exactly half the slider (= full viewport width) */
+.card {
+    width: 50%;
+    background-color: #2e2e2e;
+    padding: 48px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    flex-shrink: 0;
+}
+
+body:not(.dark-mode) .card {
+    background-color: #3a3a3a;
+}
+
+/* Heading */
+.card h2 {
+    font-size: 26px;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 6px;
+}
+
+/* Inputs */
+.card input {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: 30px;
+    border: none;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    color: #333;
+    outline: none;
+    transition: box-shadow 0.2s;
+}
+
+.card input:focus {
+    box-shadow: 0 0 0 3px rgba(255, 208, 0, 0.5);
+}
+
+/* Forgot password */
+.forgot {
+    text-align: right;
+    margin-top: -6px;
+}
+
+.forgot a {
+    color: #ff4d4d;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.forgot a:hover {
+    text-decoration: underline;
+}
+
+/* Primary Button */
+.btn-primary {
+    width: 100%;
+    padding: 13px;
+    border-radius: 30px;
+    border: none;
+    background-color: #b0b0b0;
+    color: #1a1a1a;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+    margin-top: 4px;
+}
+
+.btn-primary:hover {
+    background-color: #ffd000;
+    transform: translateY(-1px);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+/* Secondary Button */
+.btn-secondary {
+    width: 100%;
+    padding: 11px;
+    border-radius: 30px;
+    border: 2px solid #888;
+    background-color: transparent;
+    color: #ccc;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: border-color 0.2s, color 0.2s;
+}
+
+.btn-secondary:hover {
+    border-color: #ffd000;
+    color: #ffd000;
+}
